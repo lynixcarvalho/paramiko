@@ -1,5 +1,5 @@
-FROM python:3-alpine
+FROM python:3
 
-RUN apk add py3-paramiko
+RUN pip install --no-cache-dir paramiko
 
 CMD ["python"]
