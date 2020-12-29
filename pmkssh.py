@@ -36,3 +36,7 @@ if __name__ == '__main__':
     output = ssh.exec_cmd("ls -l;hostname;date")
     for i in output:
         print(i.rstrip('\n'))
+    
+    # Para executar este script no container utilize o seguinte comando:
+    #
+    # docker run --rm -it -v "@PWD:/app" acarlos01/paramiko:tag python /app/pmkssh.py
