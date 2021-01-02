@@ -7,8 +7,8 @@ RUN apk add --virtual .paramiko_dependencies \
     openssl-dev \
     build-base \
     py-pip \
-&&  apk add zlib \
     zlib-dev \
+&&  apk add zlib \
     libssl1.1 \
 &&  pip install cffi \
 &&  pip install paramiko \
