@@ -10,7 +10,6 @@ RUN apk add --virtual .paramiko_dependencies \
 &&  apk add zlib \
     zlib-dev \
     libssl1.1 \
-    openssl-dev \
 &&  pip install cffi \
 &&  pip install paramiko \
 &&  apk del .paramiko_dependencies
