@@ -25,14 +25,4 @@ class SSH:
             else:
                 return stdout
 
-if __name__ == '__main__':
-    # Exemplo de uso da classe SSH
-    # Antes da chamada é necessário definir as variáveis: host user passw
-    host = 'IP Address'
-    user = 'Nome do usuário que fará a conexão'
-    passw = 'Password do usuário'
-    ssh = SSH()
-    ssh.conn(host,user,passw)
-    output = ssh.exec_cmd("ls -l;hostname;date")
-    for i in output:
-        print(i.rstrip('\n'))
+
