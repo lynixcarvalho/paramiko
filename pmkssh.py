@@ -8,6 +8,7 @@ class SSH:
         self.ssh = SSHClient()
         self.ssh.load_system_host_keys()
         self.ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+        self.__rcode = 0
 
     def conn(self,host,user,passw):
         try:
@@ -21,8 +22,12 @@ class SSH:
         if self.connected:
             stdin,stdout,stderr = self.ssh.exec_command(cmd)
             if stderr.channel.recv_exit_status() != 0:
+                self.__rcode = stderr.channel.recv_exit_status()
                 return stderr
             else:
+                self.__rcode = 0
                 return stdout
 
-
+    @property
+    def rc(self):
+        return self.__rcode
