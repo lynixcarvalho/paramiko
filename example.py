@@ -10,6 +10,7 @@ ssh = SSH()
 with open('/app/config.json','r') as fjson:
     data = json.load(fjson)
 
+# Loop no arquivo json para execução de vários servidores em sequencia
 for host in range(0, len(data['conn']['host'])):
     ssh.conn(data['conn']['host'][host],data['conn']['user'],data['conn']['passwd'])
 
