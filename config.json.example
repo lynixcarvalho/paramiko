@@ -1,6 +1,6 @@
 {
     "conn" : {
-        "host" : "IP do host que será acessado",
+        "host" : ["Lista de IP's dos hosts que serão acessados"],
         "user" : "Nome do usuário que fará a conexão",
         "passwd" : "Password do usuário"
     }

@@ -21,11 +21,10 @@ class SSH:
     def exec_cmd(self,cmd):
         if self.connected:
             stdin,stdout,stderr = self.ssh.exec_command(cmd)
-            if stderr.channel.recv_exit_status() != 0:
-                self.__rcode = stderr.channel.recv_exit_status()
+            self.__rcode = stderr.channel.recv_exit_status()
+            if self.__rcode != 0:
                 return stderr
             else:
-                self.__rcode = 0
                 return stdout
 
     @property
